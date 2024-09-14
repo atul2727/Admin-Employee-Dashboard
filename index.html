@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growthflow Corp - Task Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="https://img.freepik.com/free-vector/colorful-company-logo-template-with-tagline_23-2148802643.jpg" alt="TaskFlow Corp Logo" class="logo">
+        <h1>Growthflow Corp</h1>
+    </header>
+
+    <div class="container">
+        <!-- Admin Dashboard -->
+        <div id="admin-dashboard" class="dashboard" style="display:none;">
+            <h2>Admin Dashboard</h2>
+            <button class="btn-danger" onclick="logout()">Logout</button>
+            <h3>Assign Task to Employee</h3>
+            <input type="text" id="task" placeholder="Enter task for employees" style="width: calc(100% - 22px); margin-bottom: 10px;">
+            <input type="text" id="employee" placeholder="Enter employee name" style="width: calc(100% - 22px); margin-bottom: 10px;">
+            <button class="btn-success" onclick="assignTask()">Assign Task</button>
+
+            <h4 class="mt-4">Assigned Tasks</h4>
+            <select id="task-filter" onchange="filterTasks()" style="margin-bottom: 15px; padding: 5px;">
+                <option value="all">All</option>
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <div id="task-list"></div>
+        </div>
+
+        <!-- Employee Dashboard -->
+        <div id="employee-dashboard" class="dashboard" style="display:none;">
+            <h2>Employee Dashboard</h2>
+            <button class="btn-danger" onclick="logout()">Logout</button>
+            <h3>Your Assigned Tasks</h3>
+            <div id="employee-tasks"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Growthflow Corp © 2024 | Designed to streamline your tasks</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
